@@ -1,0 +1,9 @@
+version: 4.2.12
+session: 67c90bfe87ffd6929e3066a9
+steps:
+  - prompt: Click on the "Join" button.
+    commands:
+      - command: hover-text
+        text: JOIN
+        description: join button in the top right of the header
+        action: click
