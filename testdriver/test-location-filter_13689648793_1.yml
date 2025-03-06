@@ -1,0 +1,25 @@
+version: 4.2.12
+session: 67c90731f83fdb2e1aab64cb
+steps:
+  - prompt: Focus the location dropdown.
+    commands:
+      - command: hover-text
+        text: Location
+        description: location dropdown in the search bar
+        action: click
+  - prompt: Select a different location.
+    commands:
+      - command: hover-text
+        text: Columbus, OH, USA (Franklin County)
+        description: second location option in the dropdown
+        action: click
+  - prompt: Click the "See Jobs" button.
+    commands:
+      - command: hover-text
+        text: SEE JOBS
+        description: see jobs button next to location dropdown
+        action: click
+  - prompt: Assert that the job results are updated according to the new location.
+    commands:
+      - command: assert
+        expect: job listings include "Columbus, OH, USA"
