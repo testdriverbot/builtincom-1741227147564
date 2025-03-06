@@ -1,0 +1,38 @@
+version: 4.2.12
+session: 67c90b6687ffd6929e306611
+steps:
+  - prompt: /run testdriver\test-location-filter_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-location-filter_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Select a different location from the location dropdown.
+    commands:
+      - command: hover-text
+        text: Columbus, Ohio, USA
+        description: location dropdown in the search bar
+        action: click
+      - command: hover-text
+        text: Columbus, OH, USA
+        description: first location option in the dropdown
+        action: click
+  - prompt: Select a different location from the location dropdown.
+    commands:
+      - command: hover-text
+        text: Location
+        description: location dropdown in the search bar
+        action: click
+      - command: hover-text
+        text: Columbus, GA, USA
+        description: different location option in the dropdown
+        action: click
+      - command: hover-text
+        text: See Jobs
+        description: button to view job listings
+        action: click
+        method: ai
+  - prompt: Assert that the results are filtered by the selected location.
+    commands:
+      - command: assert
+        expect: the results show jobs in Columbus, GA, USA
