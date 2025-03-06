@@ -1,0 +1,35 @@
+version: 4.2.12
+session: 67c90b5d87ffd6929e306605
+steps:
+  - prompt: /run testdriver\test-search-functionality_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-search-functionality_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "Join" button in the header.
+    commands:
+      - command: hover-text
+        text: JOIN
+        description: join button in the header
+        action: click
+  - prompt: Fill in registration details.
+    commands:
+      - command: hover-text
+        text: Email
+        description: email input field
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Submit the sign-up form.
+    commands:
+      - command: hover-text
+        text: SIGN UP
+        description: sign-up button at the bottom of the form
+        action: click
+  - prompt: Assert that a confirmation message or welcome page is displayed.
+    commands:
+      - command: assert
+        expect: Check Your Inbox
