@@ -1,0 +1,20 @@
+version: 4.2.12
+session: 67c909f3f83fdb2e1aab660a
+steps:
+  - prompt: /run testdriver\test-navigation-to-articles_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-navigation-to-articles_13689648793_1.yml
+  - prompt: Enter a job title in the search field.
+    commands:
+      - command: hover-text
+        text: FOR EMPLOYERS
+        description: search field in the navigation bar
+        action: click
+      - command: type
+        text: Software Engineer
+      - command: hover-image
+        description: search icon in the top navigation bar
+        action: click
+      - command: type
+        text: Software Engineer
