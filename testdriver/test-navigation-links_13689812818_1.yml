@@ -1,0 +1,27 @@
+version: 4.2.12
+session: 67c909fbf83fdb2e1aab6610
+steps:
+  - prompt: /run testdriver\test-navigation-to-articles_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-navigation-to-articles_13689648793_1.yml
+  - prompt: Click on "Jobs" in the navigation menu.
+    commands:
+      - command: hover-text
+        text: JOBS
+        description: jobs in the navigation menu
+        action: click
+  - prompt: Assert that the jobs page is opened.
+    commands:
+      - command: assert
+        expect: Top Tech Jobs & Startup Jobs is visible
+  - prompt: Click on "Companies" in the navigation menu.
+    commands:
+      - command: hover-text
+        text: COMPANIES
+        description: companies in the navigation menu
+        action: click
+  - prompt: Assert that the companies page is opened.
+    commands:
+      - command: assert
+        expect: Top Tech Companies is visible
