@@ -1,0 +1,55 @@
+version: 4.2.12
+session: 67c90a9a87ffd6929e3065b0
+steps:
+  - prompt: /run testdriver\test-search-functionality_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-search-functionality_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Enter a job title in the "Job Title or Keyword" field.
+    commands:
+      - command: hover-text
+        text: Job Title or Keyword
+        description: search input field for job title
+        action: click
+      - command: type
+        text: Data Scientist
+  - prompt: Select a location and job type.
+    commands:
+      - command: hover-text
+        text: Fully Remote, Hybrid, On Site
+        description: job type dropdown
+        action: click
+      - command: hover-text
+        text: Hybrid
+        description: select hybrid job type
+        action: click
+      - command: hover-text
+        text: Location
+        description: location input field
+        action: click
+      - command: type
+        text: New York, NY, USA
+  - prompt: Select a location and job type.
+    commands:
+      - command: hover-text
+        text: Location
+        description: location input field
+        action: click
+      - command: type
+        text: New York, NY, USA
+      - command: hover-text
+        text: Fully Remote, Hybrid, On Site
+        description: job type dropdown
+        action: click
+      - command: hover-text
+        text: Hybrid
+        description: select hybrid job type
+        action: click
+  - prompt: Click "See Jobs".
+    commands:
+      - command: hover-text
+        text: See Jobs
+        description: button to view job listings
+        action: click
