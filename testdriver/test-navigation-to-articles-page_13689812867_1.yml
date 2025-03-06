@@ -1,0 +1,19 @@
+version: 4.2.12
+session: 67c90b6bf83fdb2e1aab6704
+steps:
+  - prompt: /run testdriver\test-location-filter_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-location-filter_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click on the "ARTICLES" link in the navigation bar.
+    commands:
+      - command: hover-text
+        text: ARTICLES
+        description: articles link in the navigation bar
+        action: click
+  - prompt: Assert that the articles page is displayed.
+    commands:
+      - command: assert
+        expect: Tech Articles & Industry Guides is visible
