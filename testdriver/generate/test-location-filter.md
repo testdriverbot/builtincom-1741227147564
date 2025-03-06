@@ -1,4 +1,5 @@
-1. Focus the location dropdown.
-2. Select a different location.
-3. Click the "See Jobs" button.
-4. Assert that the job results are updated according to the new location.
+1. /run testdriver/test-sign-up-process_13689648793_1.yml --embed
+2. Focus the browser window.
+3. Select a different location from the location dropdown.
+4. Click the "See Jobs" button.
+5. Assert that the search results are updated according to the selected location.
