@@ -1,0 +1,17 @@
+version: 4.2.12
+session: 67c90733f83fdb2e1aab64cd
+steps:
+  - prompt: Click on "Articles" in the navigation menu.
+    commands:
+      - command: hover-text
+        text: ARTICLES
+        description: articles in the navigation menu
+        action: click
+  - prompt: Assert that the user is redirected to the articles page.
+    commands:
+      - command: assert
+        expect: Tech Articles & Industry Guides is visible
+  - prompt: Verify that the articles are listed correctly.
+    commands:
+      - command: assert
+        expect: Understanding Cosine Similarity and its Applications is visible
