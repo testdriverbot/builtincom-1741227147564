@@ -1,0 +1,27 @@
+version: 4.2.12
+session: 67c90b6bf83fdb2e1aab6702
+steps:
+  - prompt: /run testdriver\test-location-filter_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-location-filter_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Enter a job title or keyword into the search field.
+    commands:
+      - command: hover-text
+        text: Job Title, Company or Keyword
+        description: search input field in the job search bar
+        action: click
+      - command: type
+        text: Software Engineer
+  - prompt: Click the "See Jobs" button.
+    commands:
+      - command: hover-text
+        text: SEE JOBS
+        description: see jobs button next to location dropdown
+        action: click
+  - prompt: Assert that search results are displayed.
+    commands:
+      - command: assert
+        expect: job listings are visible on the page
