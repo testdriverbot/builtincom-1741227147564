@@ -1,0 +1,23 @@
+version: 4.2.12
+session: 67c90bf8f83fdb2e1aab6791
+steps:
+  - prompt: /run testdriver\test-sign-up-process_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-sign-up-process_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click "Join" or "Log In" from the header.
+    commands:
+      - command: hover-text
+        text: JOIN
+        description: join button in the top right of the header
+        action: click
+  - prompt: Click "Join" or "Log In" from the header.
+    commands:
+      - command: hover-text
+        text: JOIN
+        description: join button in the top right of the header
+        action: click
