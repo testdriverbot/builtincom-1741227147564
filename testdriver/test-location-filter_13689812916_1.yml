@@ -1,0 +1,41 @@
+version: 4.2.12
+session: 67c90c6df83fdb2e1aab67c9
+steps:
+  - prompt: /run testdriver\test-sign-up-process_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-sign-up-process_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Select a different location from the location dropdown.
+    commands:
+      - command: hover-text
+        text: Location
+        description: location dropdown next to the job search input
+        action: click
+  - prompt: Select a different location from the location dropdown.
+    commands:
+      - command: hover-text
+        text: Columbus, OH, USA (Franklin County)
+        description: different location option in the dropdown
+        action: click
+  - prompt: Select a different location from the location dropdown.
+    commands:
+      - command: hover-text
+        text: Columbus, OH, USA (Franklin County)
+        description: second location option in the dropdown
+        action: click
+  - prompt: Click the "See Jobs" button.
+    commands:
+      - command: hover-text
+        text: SEE JOBS
+        description: see jobs button next to the location dropdown
+        action: click
+  - prompt: >-
+      Assert that the search results are updated according to the selected
+      location.
+    commands:
+      - command: assert
+        expect: the search results show jobs in Columbus, OH, USA
