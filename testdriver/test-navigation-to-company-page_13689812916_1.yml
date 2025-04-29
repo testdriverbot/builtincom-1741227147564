@@ -1,0 +1,23 @@
+version: 4.2.12
+session: 67c90c9a87ffd6929e3066f7
+steps:
+  - prompt: /run testdriver\test-sign-up-process_13689648793_1.yml
+    commands:
+      - command: run
+        file: testdriver\test-sign-up-process_13689648793_1.yml
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on a company listed in the "Explore Tech Companies" section.
+    commands:
+      - command: hover-text
+        text: BAE Systems, Inc.
+        description: company name in the Explore Tech Companies section
+        action: click
+  - prompt: >-
+      Assert that the dedicated company page opens displaying information about
+      the company.
+    commands:
+      - command: assert
+        expect: BAE Systems, Inc. page is displayed with company information
